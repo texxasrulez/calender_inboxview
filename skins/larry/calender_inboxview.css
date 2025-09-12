@@ -1,4 +1,43 @@
-/* baseline for larry */
+/* calender_inboxview larry skin styles */
+#ci-upcoming.ci-panel {
+  margin: 8px 0 0 0;
+  border: 1px solid rgba(0,0,0,.18);
+  background: rgba(0,0,0,.035);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 12px;
+}
+#ci-upcoming .ci-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  font-weight: 600;
+}
+#ci-upcoming .ci-open-cal {
+  text-decoration: none;
+  font-weight: 700;
+  opacity: .6;
+}
+#ci-upcoming .ci-open-cal:hover { opacity: 1; }
+
+#ci-upcoming .ci-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 8px;
+  max-height: 280px;
+  overflow: auto;
+}
+#ci-upcoming .ci-item + .ci-item { border-top: 1px dashed rgba(0,0,0,.12); }
+#ci-upcoming .ci-item { padding: 6px 0; line-height: 1.2; }
+#ci-upcoming .ci-when { opacity: .7; }
+#ci-upcoming .ci-titleline { font-weight: 600; }
+#ci-upcoming .ci-loc { opacity: .75; font-style: italic; }
+#ci-upcoming.ci--empty .ci-list { display:none; }
+#ci-upcoming .ci-empty { padding: 10px; opacity:.7; }
+
 /* calender_inboxview: color dots + compact mode */
 #ci-upcoming .ci-titleline { display: flex; align-items: center; gap: 6px; }
 #ci-upcoming .ci-dot {
@@ -11,3 +50,4 @@
 #ci-upcoming.ci--compact .ci-item { padding: 4px 0; }
 #ci-upcoming.ci--compact .ci-titleline { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 #ci-upcoming.ci--compact .ci-loc { display: none; } /* keep it tight */
+
