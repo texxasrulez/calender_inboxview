@@ -1,5 +1,42 @@
 /* calender_inboxview: client-side UI with debug logging */
 (function() {
+// --- bottom-dock helpers (without touching skin CSS files) ---
+function injectDockCSS(){
+  if (document.getElementById('ci-dock-css')) return;
+  var css = [
+    '#folderlist-content, .scroller.withfooter{display:flex !important; flex-direction:column !important; overflow:hidden !important; min-height:0 !important;}',
+    '#folderlist-content > #mailboxlist, .scroller.withfooter > #mailboxlist{flex:1 1 auto !important; overflow:auto !important; min-height:0 !important;}',
+    '#ci-upcoming{margin-top:auto !important; flex:0 0 auto !important; position:relative !important; z-index:0 !important;}'
+  ].join('\n');
+  var style = document.createElement('style');
+  style.id = 'ci-dock-css';
+  style.type = 'text/css';
+  style.appendChild(document.createTextNode(css));
+  (document.head || document.documentElement).appendChild(style);
+}
+function dockIntoFolderList(panel){
+  try {
+    var content = document.querySelector('#folderlist-content.scroller.withfooter') ||
+                  document.querySelector('#folderlist-content') ||
+                  document.querySelector('.scroller.withfooter');
+    var mailbox = document.getElementById('mailboxlist');
+    if (content && mailbox && panel) {
+      injectDockCSS();
+      if (panel.parentNode !== content || content.lastElementChild !== panel) {
+        try { if (panel.parentNode && panel.parentNode !== content) panel.parentNode.removeChild(panel); } catch(e){}
+        content.appendChild(panel);
+        log('panel_docked_bottom');
+      }
+      return true;
+    }
+  } catch(e) { log('dock_error', e); }
+  return false;
+}
+function observeDock(panel){
+  var mo = new MutationObserver(function(){ dockIntoFolderList(panel); });
+  mo.observe(document.body, {childList:true, subtree:true});
+}
+
   function log() {
     try {
       if (window.rcmail && rcmail.env && rcmail.env.ci_debug) {
@@ -54,7 +91,7 @@
       if (window.rcmail) rcmail.command('switch-task', 'calendar');
     });
 
-    root.parentNode.insertBefore(wrap, root.nextSibling);
+    if (!dockIntoFolderList(wrap)) { root.parentNode.insertBefore(wrap, root.nextSibling); }
     return wrap;
   }
 
@@ -122,6 +159,8 @@
       var panel = renderPanel(mount);
       if (!panel) { log('panel_not_mounted'); return; }
       if (rcmail.env.ci_compact) panel.classList.add('ci--compact');
+      dockIntoFolderList(panel);
+      observeDock(panel);
       fetchEvents(rcmail.env.ci_days_ahead || 7);
 
       rcmail.addEventListener('plugin.ci_events', function(resp) {
