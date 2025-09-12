@@ -11,12 +11,12 @@
   }
 
   function findMountPoint() {
-    var selectors = ['#mailboxlist', '#directorylist', '#mailview-left', '#sidebar', '#messagelistcontainer'];
+    var selectors = ['#mailboxlist', '#directorylist', '#mailview-left', '#sidebar', /*'#messagelistcontainer'*/];
     for (var i=0; i<selectors.length; i++) {
       var el = document.querySelector(selectors[i]);
       if (el) return el;
     }
-    return document.body;
+    return null;
   }
 
   function hashCode(str) {
@@ -32,6 +32,7 @@
     return 'hsl(' + h + ',60%,45%)';
   }
   function renderPanel(root) {
+    if (!root) { log('no_mountpoint_abort'); return null; }
     if (document.getElementById('ci-upcoming')) return;
     var wrap = document.createElement('div');
     wrap.id = 'ci-upcoming';
@@ -99,6 +100,7 @@
       li.innerHTML = '<div class="ci-when">' + esc(when) + '</div>' +
                      '<div class="ci-titleline">' + dot + esc(title) + '</div>' +
                      (ev.location ? '<div class="ci-loc">' + esc(ev.location) + '</div>' : '');
+      li.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); });
       ul.appendChild(li);
     });
   }
@@ -118,6 +120,7 @@
       log('env', rcmail.env.ci_days_ahead, rcmail.env.ci_panel_title);
       var mount = findMountPoint();
       var panel = renderPanel(mount);
+      if (!panel) { log('panel_not_mounted'); return; }
       if (rcmail.env.ci_compact) panel.classList.add('ci--compact');
       fetchEvents(rcmail.env.ci_days_ahead || 7);
 
