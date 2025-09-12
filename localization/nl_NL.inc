@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Komende kalendergebeurtenissen (mailboxweergave)';
+$labels['ci_prefs_section'] = 'Komende kalendergebeurtenissen';
 $labels['ci_display_upcoming'] = 'Komende evenementen weergeven';
-$labels['ci_days_ahead'] = 'Dagen voor de show';
+$labels['ci_days_ahead'] = 'Dagen van tevoren te tonen';
 $labels['ci_panel_title'] = 'Komende evenementen';
 $labels['ci_no_events'] = 'Geen aankomende evenementen';
 $labels['ci_demo_sync'] = 'Agenda-demo: synchronisatietest';

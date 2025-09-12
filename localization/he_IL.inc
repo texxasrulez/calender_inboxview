@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'אירועים קרובים בלוח השנה (תצוגת תיבת דואר)';
+$labels['ci_prefs_section'] = 'אירועים קרובים בלוח השנה';
 $labels['ci_display_upcoming'] = 'הצג אירועים קרובים';
-$labels['ci_days_ahead'] = 'ימים להציג קדימה';
+$labels['ci_days_ahead'] = 'ימים להציג מראש';
 $labels['ci_panel_title'] = 'אירועים קרובים';
 $labels['ci_no_events'] = 'אין אירועים קרובים';
 $labels['ci_demo_sync'] = 'הדגמת לוח שנה: בדיקת סנכרון';

@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Artėjantys kalendoriaus įvykiai (pašto dėžutės rodinys)';
+$labels['ci_prefs_section'] = 'Artimiausi kalendoriaus renginiai';
 $labels['ci_display_upcoming'] = 'Rodyti būsimus renginius';
-$labels['ci_days_ahead'] = 'Dienos iki parodos į priekį';
+$labels['ci_days_ahead'] = 'Dienos, per kurias reikia parodyti iš anksto';
 $labels['ci_panel_title'] = 'Artimiausi renginiai';
 $labels['ci_no_events'] = 'Artimiausių renginių nėra';
 $labels['ci_demo_sync'] = 'Kalendoriaus demonstracinė versija: sinchronizavimo bandymas';

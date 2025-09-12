@@ -1,6 +1,6 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = '即将举行的日历活动（邮箱视图）';
+$labels['ci_prefs_section'] = '近期日历活动';
 $labels['ci_display_upcoming'] = '显示即将举行的活动';
 $labels['ci_days_ahead'] = '提前展示天数';
 $labels['ci_panel_title'] = '近期活动';

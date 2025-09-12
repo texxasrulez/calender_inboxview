@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Nadchádzajúce udalosti v kalendári (zobrazenie poštovej schránky)';
+$labels['ci_prefs_section'] = 'Nadchádzajúce udalosti v kalendári';
 $labels['ci_display_upcoming'] = 'Zobrazenie nadchádzajúcich udalostí';
-$labels['ci_days_ahead'] = 'Dni dopredu';
+$labels['ci_days_ahead'] = 'Dni na zobrazenie vopred';
 $labels['ci_panel_title'] = 'Nadchádzajúce podujatia';
 $labels['ci_no_events'] = 'Žiadne nadchádzajúce podujatia';
 $labels['ci_demo_sync'] = 'Ukážka kalendára: test synchronizácie';

@@ -1,6 +1,6 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Próximos eventos do calendário (visualização da caixa de correio)';
+$labels['ci_prefs_section'] = 'Próximos eventos do calendário';
 $labels['ci_display_upcoming'] = 'Exibir os próximos eventos';
 $labels['ci_days_ahead'] = 'Dias para mostrar com antecedência';
 $labels['ci_panel_title'] = 'Próximos eventos';

@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Предстоящие события календаря (просмотр почтового ящика)';
+$labels['ci_prefs_section'] = 'Предстоящие события календаря';
 $labels['ci_display_upcoming'] = 'Отображение предстоящих событий';
-$labels['ci_days_ahead'] = 'Дни, которые нужно показать впереди';
+$labels['ci_days_ahead'] = 'Дни, которые нужно показать заранее';
 $labels['ci_panel_title'] = 'Предстоящие события';
 $labels['ci_no_events'] = 'Событий не предвидится';
 $labels['ci_demo_sync'] = 'Демоверсия календаря: тест синхронизации';

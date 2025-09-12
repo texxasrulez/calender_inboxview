@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Prossimi eventi del calendario (vista casella di posta)';
+$labels['ci_prefs_section'] = 'Prossimi eventi in calendario';
 $labels['ci_display_upcoming'] = 'Visualizzare i prossimi eventi';
-$labels['ci_days_ahead'] = 'Giorni di anticipo';
+$labels['ci_days_ahead'] = 'Giorni da mostrare in anticipo';
 $labels['ci_panel_title'] = 'Prossimi eventi';
 $labels['ci_no_events'] = 'Non ci sono eventi in programma';
 $labels['ci_demo_sync'] = 'Demo del calendario: test di sincronizzazione';

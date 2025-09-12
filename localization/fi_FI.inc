@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Tulevat kalenteritapahtumat (postilaatikkonäkymä)';
+$labels['ci_prefs_section'] = 'Tulevat kalenteritapahtumat';
 $labels['ci_display_upcoming'] = 'Näytä tulevat tapahtumat';
-$labels['ci_days_ahead'] = 'Päivät näyttää eteenpäin';
+$labels['ci_days_ahead'] = 'Päivät, jolloin näytetään etukäteen';
 $labels['ci_panel_title'] = 'Tulevat tapahtumat';
 $labels['ci_no_events'] = 'Ei tulevia tapahtumia';
 $labels['ci_demo_sync'] = 'Kalenterin demo: synkronointitesti';

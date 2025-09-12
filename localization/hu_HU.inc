@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Közelgő eseménynaptár (postaláda nézet)';
+$labels['ci_prefs_section'] = 'Közelgő eseménynaptár';
 $labels['ci_display_upcoming'] = 'Közelgő események megjelenítése';
-$labels['ci_days_ahead'] = 'Napok a bemutatóra';
+$labels['ci_days_ahead'] = 'Napok előre történő bemutatására';
 $labels['ci_panel_title'] = 'Közelgő események';
 $labels['ci_no_events'] = 'Nincsenek közelgő események';
 $labels['ci_demo_sync'] = 'Naptár demo: szinkronizációs teszt';

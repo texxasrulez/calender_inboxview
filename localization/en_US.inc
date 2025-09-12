@@ -1,9 +1,9 @@
 <?php
 
 $labels = [
-    'ci_prefs_section'   => 'Upcoming Calendar Events (Mailbox View)',
+    'ci_prefs_section'   => 'Upcoming Calendar Events',
     'ci_display_upcoming'=> 'Display Upcoming Events',
-    'ci_days_ahead'      => 'Days to show ahead',
+    'ci_days_ahead'      => 'Days to show in advance',
     'ci_panel_title'     => 'Upcoming Events',
     'ci_no_events'       => 'No upcoming events',
     'ci_demo_sync'       => 'Calendar demo: sync test',

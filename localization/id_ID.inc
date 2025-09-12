@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Acara Kalender Mendatang (Tampilan Kotak Surat)';
+$labels['ci_prefs_section'] = 'Acara Kalender Mendatang';
 $labels['ci_display_upcoming'] = 'Menampilkan Acara Mendatang';
-$labels['ci_days_ahead'] = 'Hari-hari yang akan datang';
+$labels['ci_days_ahead'] = 'Hari untuk ditampilkan di muka';
 $labels['ci_panel_title'] = 'Acara Mendatang';
 $labels['ci_no_events'] = 'Tidak ada acara yang akan datang';
 $labels['ci_demo_sync'] = 'Demo kalender: uji sinkronisasi';

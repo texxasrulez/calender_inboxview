@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Предстоящи събития от календара (изглед на пощенската кутия)';
+$labels['ci_prefs_section'] = 'Предстоящи събития от календара';
 $labels['ci_display_upcoming'] = 'Показване на предстоящи събития';
-$labels['ci_days_ahead'] = 'Дни за показване напред';
+$labels['ci_days_ahead'] = 'Дни за предварително показване';
 $labels['ci_panel_title'] = 'Предстоящи събития';
 $labels['ci_no_events'] = 'Няма предстоящи събития';
 $labels['ci_demo_sync'] = 'Демонстрация на календара: тест за синхронизация';

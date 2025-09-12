@@ -1,6 +1,6 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Kommende Kalenderereignisse (Mailbox-Ansicht)';
+$labels['ci_prefs_section'] = 'Bevorstehender Veranstaltungskalender';
 $labels['ci_display_upcoming'] = 'Kommende Ereignisse anzeigen';
 $labels['ci_days_ahead'] = 'Tage im Voraus anzeigen';
 $labels['ci_panel_title'] = 'Kommende Veranstaltungen';

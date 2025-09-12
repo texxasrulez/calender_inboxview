@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Kommende kalenderhendelser (postkassevisning)';
+$labels['ci_prefs_section'] = 'Kommende kalenderhendelser';
 $labels['ci_display_upcoming'] = 'Vis kommende arrangementer';
-$labels['ci_days_ahead'] = 'Dager å vise fremover';
+$labels['ci_days_ahead'] = 'Dager å vise på forhånd';
 $labels['ci_panel_title'] = 'Kommende arrangementer';
 $labels['ci_no_events'] = 'Ingen kommende arrangementer';
 $labels['ci_demo_sync'] = 'Kalenderdemo: synkroniseringstest';

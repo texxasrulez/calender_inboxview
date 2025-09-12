@@ -1,8 +1,8 @@
 <?php
 $labels = array();
-$labels['ci_prefs_section'] = 'Calendar evenimente viitoare (Vizualizare căsuță poștală)';
+$labels['ci_prefs_section'] = 'Calendar evenimente viitoare';
 $labels['ci_display_upcoming'] = 'Afișați viitoarele evenimente';
-$labels['ci_days_ahead'] = 'Zile pentru a arăta înainte';
+$labels['ci_days_ahead'] = 'Zile pentru prezentarea în avans';
 $labels['ci_panel_title'] = 'Evenimente viitoare';
 $labels['ci_no_events'] = 'Nu există evenimente viitoare';
 $labels['ci_demo_sync'] = 'Calendar demo: test de sincronizare';
