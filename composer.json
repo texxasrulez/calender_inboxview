@@ -1,0 +1,28 @@
+{
+  "name": "texxasrulez/calender_inboxview",
+  "type": "roundcube-plugin",
+  "description": "Displays upcoming events from the Roundcube calendar in the Mailbox view.",
+    "homepage": "https://github.com/texxasrulez/calender_inboxview",
+	"support": {
+		"issues": "https://github.com/texxasrulez/calender_inboxview/issues",
+		"source": "https://github.com/texxasrulez/calender_inboxview"
+  },
+  "license": "GPL-3.0",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "Gene Hawkins",
+            "email": "texxasrulez@yahoo.com",
+            "role": "Developer"
+        }
+    ],
+  "require": {
+    "php": ">=8.0",
+    "roundcube/plugin-installer": ">=0.1.3"
+  },
+  "extra": {
+    "roundcube": {
+      "min-version": "1.5"
+    }
+  }
+}

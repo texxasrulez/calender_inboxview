@@ -1,0 +1,13 @@
+/* baseline for larry */
+/* calender_inboxview: color dots + compact mode */
+#ci-upcoming .ci-titleline { display: flex; align-items: center; gap: 6px; }
+#ci-upcoming .ci-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset;
+  flex: 0 0 auto;
+}
+#ci-upcoming.ci--compact .ci-item { padding: 4px 0; }
+#ci-upcoming.ci--compact .ci-titleline { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#ci-upcoming.ci--compact .ci-loc { display: none; } /* keep it tight */

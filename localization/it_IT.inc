@@ -1,0 +1,12 @@
+<?php
+$labels = array();
+$labels['ci_prefs_section'] = 'Prossimi eventi del calendario (vista casella di posta)';
+$labels['ci_display_upcoming'] = 'Visualizzare i prossimi eventi';
+$labels['ci_days_ahead'] = 'Giorni di anticipo';
+$labels['ci_panel_title'] = 'Prossimi eventi';
+$labels['ci_no_events'] = 'Non ci sono eventi in programma';
+$labels['ci_demo_sync'] = 'Demo del calendario: test di sincronizzazione';
+$labels['ci_demo_standup'] = 'Stand-up giornaliero';
+$labels['ci_demo_room'] = 'Sala conferenze A';
+$labels['ci_compact_mode'] = 'Compatto Prossimi eventi (titoli di una riga)';
+?>

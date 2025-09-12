@@ -1,0 +1,12 @@
+<?php
+$labels = array();
+$labels['ci_prefs_section'] = 'Közelgő eseménynaptár (postaláda nézet)';
+$labels['ci_display_upcoming'] = 'Közelgő események megjelenítése';
+$labels['ci_days_ahead'] = 'Napok a bemutatóra';
+$labels['ci_panel_title'] = 'Közelgő események';
+$labels['ci_no_events'] = 'Nincsenek közelgő események';
+$labels['ci_demo_sync'] = 'Naptár demo: szinkronizációs teszt';
+$labels['ci_demo_standup'] = 'Napi stand-up';
+$labels['ci_demo_room'] = 'A konferenciaterem';
+$labels['ci_compact_mode'] = 'Kompakt közelgő események (egysoros címek)';
+?>
