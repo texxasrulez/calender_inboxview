@@ -1,9 +1,8 @@
 /* calender_inboxview larry skin styles */
 #ci-upcoming.ci-panel {
   margin: 8px 0 0 0;
-  border: 1px solid rgba(0,0,0,.18);
-  background: rgba(0,0,0,.035);
-  border-radius: 8px;
+  border: 1px solid #d19cb7;
+  background: #f1dee7;
   overflow: hidden;
   font-size: 12px;
 }
@@ -13,8 +12,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 6px 8px;
-  background: rgba(0,0,0,.06);
-  border-bottom: 1px solid rgba(0,0,0,.12);
+  background: #dcadc5;
   font-weight: 600;
 }
 #ci-upcoming .ci-open-cal {

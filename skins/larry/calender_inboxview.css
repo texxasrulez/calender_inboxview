@@ -1,19 +1,18 @@
 /* calender_inboxview larry skin styles */
 #ci-upcoming.ci-panel {
   margin: 8px 0 0 0;
-  border: 1px solid rgba(0,0,0,.18);
-  background: rgba(0,0,0,.035);
-  border-radius: 8px;
+  border: 1px solid #bbd3da;
+  background: #d9ecf4;
   overflow: hidden;
   font-size: 12px;
 }
 #ci-upcoming .ci-hdr {
+  color: #03475b;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 6px 8px;
-  background: rgba(0,0,0,.06);
-  border-bottom: 1px solid rgba(0,0,0,.12);
+  background: #c7e3ef;
   font-weight: 600;
 }
 #ci-upcoming .ci-open-cal {
@@ -24,6 +23,7 @@
 #ci-upcoming .ci-open-cal:hover { opacity: 1; }
 
 #ci-upcoming .ci-list {
+  color: #03475b;
   list-style: none;
   margin: 0;
   padding: 6px 8px;
