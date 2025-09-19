@@ -3,16 +3,16 @@
   margin: 8px 0 0 0;
   border: 1px solid rgba(0,0,0,.15);
   background: rgba(0,0,0,.04);
-  border-radius: 8px;
   overflow: hidden;
   font-size: 12px;
 }
 #ci-upcoming .ci-hdr {
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 6px 8px;
-  background: rgba(0,0,0,.06);
+  background: #929292;
   border-bottom: 1px solid rgba(0,0,0,.12);
   font-weight: 600;
 }
@@ -24,6 +24,7 @@
 #ci-upcoming .ci-open-cal:hover { opacity: 1; }
 
 #ci-upcoming .ci-list {
+  color: #000;
   list-style: none;
   margin: 0;
   padding: 6px 8px;
