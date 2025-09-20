@@ -44,9 +44,3 @@ Add more locales by copying `en_US.inc.php` and translating the strings.
 ## Notes
 - The panel mounts just under the folder list in most skins. If your layout is exotic,
   adjust the `findMountPoint()` selector list in `js/calender_inboxview.js`.
-
-## Troubleshooting
-- Enable Roundcube logs and keep an eye out for HTTP 404/500 from `?_task=calendar` calls.
-- If your calendar plugin requires different parameter names, ping me the exact endpoint and I'll adapt
-  the provider quickly (or you can adjust `try_calendar_http()` in `calender_inboxview.php`).
-
