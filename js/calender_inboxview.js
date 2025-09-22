@@ -106,16 +106,6 @@ function observeDock(panel){
     if (!iso) return '';
     try {
       var dt = new Date(iso);
-      var env = (window.rcmail && rcmail.env) ? rcmail.env : {};
-      var showAll = !!env.ci_show_all_day_time;              // user wants times for all-day
-      var forceNoon = (env.ci_force_noon_anchor !== false);  // default true
-      var isAllDayByNoon = forceNoon && dt.getHours() === 12 && dt.getMinutes() === 0;
-
-      var dateStr = dt.toLocaleDateString(undefined, {weekday:'short', month:'short', day:'numeric'});
-      if (isAllDayByNoon && !showAll) {
-        var label = (window.rcmail && rcmail.gettext) ? rcmail.gettext('ci_all_day', 'calender_inboxview') : 'All Day';
-        return dateStr + ' — ' + label;
-      }
       return dt.toLocaleString(undefined, {weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit'});
     } catch(e) {
       return iso;
@@ -139,7 +129,32 @@ function observeDock(panel){
     (function(arr){var m=(window.rcmail&&rcmail.env&&parseInt(rcmail.env.ci_max_events,10))||8; if(!m||m<1)m=1; if(m>50)m=50; return arr.slice(0, m);})(events).forEach(function(ev) {
       var li = document.createElement('li');
       li.className = 'ci-item';
-      var when = fmtTime(ev.start);
+      var isAllDay = false;
+      try {
+        var env = (window.rcmail && rcmail.env) ? rcmail.env : {};
+        var showAll = !!env.ci_show_all_day_time;
+        var forceNoon = (env.ci_force_noon_anchor !== false); // default true
+        var sraw = ev && ev.start;
+        if (ev && (ev.allDay === true || ev.allday === true)) { isAllDay = true; }
+        if (!isAllDay && typeof sraw === 'string') {
+          if (/^\d{4}-\d{2}-\d{2}$/.test(sraw)) isAllDay = true; // date-only
+          if (/^\d{4}-\d{2}-\d{2}T00:00:00(?:\.000)?(?:Z|\+00:00)$/.test(sraw)) isAllDay = true; // UTC midnight
+        }
+        var s = sraw ? new Date(sraw) : null;
+        var e = ev && ev.end ? new Date(ev.end) : null;
+        if (!isAllDay && s && !isNaN(s)) {
+          if (s.getHours() === 0 && s.getMinutes() === 0) isAllDay = true;    // local midnight
+          if (forceNoon && s.getHours() === 12 && s.getMinutes() === 0) isAllDay = true; // noon anchor heuristic
+        }
+        if (!isAllDay && s && e && !isNaN(s) && !isNaN(e)) {
+          var ms = e - s;
+          if (ms >= 23*3600*1000 && ms <= 27*3600*1000) isAllDay = true; // one-day-ish with DST tolerance
+          if (!isAllDay && s.getHours()===0 && (e.getHours()>22 || (e.getHours()===23 && e.getMinutes()>=55))) isAllDay = true; // 23:59-ish
+        }
+      } catch(e) {}
+      var when = (isAllDay && !(window.rcmail && rcmail.env && rcmail.env.ci_show_all_day_time === true))
+        ? (function(){ try{ var dt=new Date(ev.start); var ds=dt.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'}); var lbl=(window.rcmail&&rcmail.gettext)?rcmail.gettext('ci_all_day','calender_inboxview'):'All Day'; return ds+' — '+lbl; }catch(e){ return 'All Day'; } })()
+        : fmtTime(ev.start);
       var title = ev.title || '(untitled)';
       var tt = title + ' — ' + when + (ev.location ? (' — ' + ev.location) : '');
       var dot = '<span class="ci-dot" style="background:'+esc(colorFrom(ev))+'"></span>'; 
