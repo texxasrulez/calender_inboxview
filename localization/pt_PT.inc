@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Stand-up diário';
 $labels['ci_demo_room'] = 'Sala de conferência A';
 $labels['ci_compact_mode'] = 'Compactar os próximos eventos (títulos de uma linha)';
 $labels['ci_all_day'] = 'Todo o dia';
-$labels['ci_show_all_day_time'] = 'Mostrar o dia todo';
+$labels['ci_show_all_day_time'] = 'Horário do show (eventos o dia todo)';
 $labels['ci_max_events'] = 'Eventos Max';
 $labels['ci_debug_level'] = 'Nível de depuração';
-$labels['ci_force_noon_anchor'] = 'Âncora Force Noon';
+$labels['ci_force_noon_anchor'] = 'Usar a hora local';
 ?>

@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Kasdienis budėjimas';
 $labels['ci_demo_room'] = 'Konferencijų salė A';
 $labels['ci_compact_mode'] = 'Kompaktiški būsimi renginiai (vienos eilutės pavadinimai)';
 $labels['ci_all_day'] = 'Visą dieną';
-$labels['ci_show_all_day_time'] = 'Rodyti visą dienos laiką';
+$labels['ci_show_all_day_time'] = 'Parodos laikas (visos dienos renginiai)';
 $labels['ci_max_events'] = '"Max Events" renginiai';
 $labels['ci_debug_level'] = 'Derinimo lygis';
-$labels['ci_force_noon_anchor'] = '"Force Noon Anchor" inkaras';
+$labels['ci_force_noon_anchor'] = 'Naudoti vietinį laiką';
 ?>

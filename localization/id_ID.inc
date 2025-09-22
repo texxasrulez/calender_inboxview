@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Stand-up harian';
 $labels['ci_demo_room'] = 'Ruang Konferensi A';
 $labels['ci_compact_mode'] = 'Acara Mendatang yang Ringkas (judul satu baris)';
 $labels['ci_all_day'] = 'Sepanjang hari';
-$labels['ci_show_all_day_time'] = 'Tampilkan Sepanjang Hari Waktu';
+$labels['ci_show_all_day_time'] = 'Waktu Pertunjukan (Acara Sepanjang Hari)';
 $labels['ci_max_events'] = 'Max Events';
 $labels['ci_debug_level'] = 'Tingkat Debug';
-$labels['ci_force_noon_anchor'] = 'Force Noon Anchor';
+$labels['ci_force_noon_anchor'] = 'Gunakan Waktu Lokal';
 ?>

@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Denní stand-up';
 $labels['ci_demo_room'] = 'Konferenční místnost A';
 $labels['ci_compact_mode'] = 'Kompaktní nadcházející události (jednořádkové názvy)';
 $labels['ci_all_day'] = 'Celý den';
-$labels['ci_show_all_day_time'] = 'Zobrazit celodenní čas';
+$labels['ci_show_all_day_time'] = 'Čas představení (celodenní akce)';
 $labels['ci_max_events'] = 'Události Max';
 $labels['ci_debug_level'] = 'Úroveň ladění';
-$labels['ci_force_noon_anchor'] = 'Force Noon Anchor';
+$labels['ci_force_noon_anchor'] = 'Použití místního času';
 ?>

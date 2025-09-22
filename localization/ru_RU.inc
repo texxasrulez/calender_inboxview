@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Ежедневный стенд-ап';
 $labels['ci_demo_room'] = 'Конференц-зал A';
 $labels['ci_compact_mode'] = 'Компактные предстоящие события (однострочные заголовки)';
 $labels['ci_all_day'] = 'Весь день';
-$labels['ci_show_all_day_time'] = 'Показать все дневное время';
+$labels['ci_show_all_day_time'] = 'Время показа (все дневные мероприятия)';
 $labels['ci_max_events'] = 'Max Events';
 $labels['ci_debug_level'] = 'Уровень отладки';
-$labels['ci_force_noon_anchor'] = 'Силовой полуденный якорь';
+$labels['ci_force_noon_anchor'] = 'Используйте местное время';
 ?>

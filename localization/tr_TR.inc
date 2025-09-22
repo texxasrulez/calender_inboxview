@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Günlük stand-up';
 $labels['ci_demo_room'] = 'Konferans Odası A';
 $labels['ci_compact_mode'] = 'Kompakt Yaklaşan Etkinlikler (tek satırlık başlıklar)';
 $labels['ci_all_day'] = 'Tüm Gün';
-$labels['ci_show_all_day_time'] = 'Tüm Gün Göster';
+$labels['ci_show_all_day_time'] = 'Gösteri Zamanı (Tüm Gün Etkinlikleri)';
 $labels['ci_max_events'] = 'Max Etkinlikleri';
 $labels['ci_debug_level'] = 'Hata Ayıklama Seviyesi';
-$labels['ci_force_noon_anchor'] = 'Force Öğlen Çapası';
+$labels['ci_force_noon_anchor'] = 'Yerel Saati Kullanın';
 ?>

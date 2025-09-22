@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Cuộc họp hàng ngày';
 $labels['ci_demo_room'] = 'Phòng hội nghị A';
 $labels['ci_compact_mode'] = 'Sự kiện sắp tới (tiêu đề một dòng)';
 $labels['ci_all_day'] = 'Cả ngày';
-$labels['ci_show_all_day_time'] = 'Hiển thị toàn bộ thời gian trong ngày';
+$labels['ci_show_all_day_time'] = 'Thời gian biểu diễn (Sự kiện cả ngày)';
 $labels['ci_max_events'] = 'Sự kiện tối đa';
 $labels['ci_debug_level'] = 'Mức độ gỡ lỗi';
-$labels['ci_force_noon_anchor'] = 'Lực neo trưa';
+$labels['ci_force_noon_anchor'] = 'Sử dụng giờ địa phương';
 ?>

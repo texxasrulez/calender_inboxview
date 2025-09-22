@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Daglig stand-up';
 $labels['ci_demo_room'] = 'Konferanserom A';
 $labels['ci_compact_mode'] = 'Kompakte kommende arrangementer (titler på én linje)';
 $labels['ci_all_day'] = 'Hele dagen';
-$labels['ci_show_all_day_time'] = 'Vis hele dagen';
+$labels['ci_show_all_day_time'] = 'Visningstid (arrangementer som varer hele dagen)';
 $labels['ci_max_events'] = 'Max Events';
 $labels['ci_debug_level'] = 'Feilsøkingsnivå';
-$labels['ci_force_noon_anchor'] = 'Force Noon Anchor';
+$labels['ci_force_noon_anchor'] = 'Bruk lokal tid';
 ?>

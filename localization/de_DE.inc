@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Tägliches Aufstehen';
 $labels['ci_demo_room'] = 'Konferenzraum A';
 $labels['ci_compact_mode'] = 'Kommende kompakte Veranstaltungen (einzeilige Titel)';
 $labels['ci_all_day'] = 'Ganztägig';
-$labels['ci_show_all_day_time'] = 'Ganztägig anzeigen';
+$labels['ci_show_all_day_time'] = 'Show Time (ganztägige Veranstaltungen)';
 $labels['ci_max_events'] = 'Max Ereignisse';
 $labels['ci_debug_level'] = 'Debug-Level';
-$labels['ci_force_noon_anchor'] = 'Kraft-Mittag-Anker';
+$labels['ci_force_noon_anchor'] = 'Ortszeit verwenden';
 ?>

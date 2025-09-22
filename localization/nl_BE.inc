@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Dagelijks opstaan';
 $labels['ci_demo_room'] = 'Vergaderzaal A';
 $labels['ci_compact_mode'] = 'Compacte komende evenementen (titels in één regel)';
 $labels['ci_all_day'] = 'De hele dag';
-$labels['ci_show_all_day_time'] = 'De hele dag tonen';
+$labels['ci_show_all_day_time'] = 'Showtijd (Alle Dagen Evenementen)';
 $labels['ci_max_events'] = 'Max Gebeurtenissen';
 $labels['ci_debug_level'] = 'Debug-niveau';
-$labels['ci_force_noon_anchor'] = 'Kracht middaganker';
+$labels['ci_force_noon_anchor'] = 'Gebruik lokale tijd';
 ?>

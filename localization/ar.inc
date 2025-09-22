@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'الوقوف اليومي';
 $labels['ci_demo_room'] = 'غرفة الاجتماعات A';
 $labels['ci_compact_mode'] = 'الأحداث القادمة المدمجة (عناوين من سطر واحد)';
 $labels['ci_all_day'] = 'طوال اليوم';
-$labels['ci_show_all_day_time'] = 'عرض طوال اليوم';
+$labels['ci_show_all_day_time'] = 'وقت العرض (فعاليات طوال اليوم)';
 $labels['ci_max_events'] = 'ماكس إيفنتس';
 $labels['ci_debug_level'] = 'مستوى التصحيح';
-$labels['ci_force_noon_anchor'] = 'مرساة قوة الظهيرة';
+$labels['ci_force_noon_anchor'] = 'استخدام التوقيت المحلي';
 ?>

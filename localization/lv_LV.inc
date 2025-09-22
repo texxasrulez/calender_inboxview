@@ -9,9 +9,9 @@ $labels['ci_demo_sync'] = 'Kalendāra demo: sinhronizācijas tests';
 $labels['ci_demo_standup'] = 'Ikdienas stend-up';
 $labels['ci_demo_room'] = 'Konferenču zāle A';
 $labels['ci_compact_mode'] = 'Kompaktie gaidāmie notikumi (vienas rindiņas virsraksti)';
-$labels['ci_all_day'] = 'Visa diena';
-$labels['ci_show_all_day_time'] = 'Rādīt visas dienas laikā';
+$labels['ci_all_day'] = 'Visu dienu';
+$labels['ci_show_all_day_time'] = 'Rādīšanas laiks (visas dienas pasākumi)';
 $labels['ci_max_events'] = 'Maksimālais notikumu skaits';
 $labels['ci_debug_level'] = 'Dzesēšanas līmenis';
-$labels['ci_force_noon_anchor'] = 'Spēka pusdienlaika enkurs';
+$labels['ci_force_noon_anchor'] = 'Vietējā laika izmantošana';
 ?>

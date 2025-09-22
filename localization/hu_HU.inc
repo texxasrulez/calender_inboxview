@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Napi stand-up';
 $labels['ci_demo_room'] = 'A konferenciaterem';
 $labels['ci_compact_mode'] = 'Kompakt közelgő események (egysoros címek)';
 $labels['ci_all_day'] = 'Egész nap';
-$labels['ci_show_all_day_time'] = 'Egész nap mutasd meg';
+$labels['ci_show_all_day_time'] = 'Műsoridő (Egész napos rendezvények)';
 $labels['ci_max_events'] = 'Max események';
 $labels['ci_debug_level'] = 'Hibakeresési szint';
-$labels['ci_force_noon_anchor'] = 'Force Noon horgony';
+$labels['ci_force_noon_anchor'] = 'Helyi idő használata';
 ?>

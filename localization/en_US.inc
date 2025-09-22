@@ -11,8 +11,8 @@ $labels = [
     'ci_demo_room'       	=> 'Conference Room A',
 	'ci_compact_mode'    	=> 'Compact Upcoming Events (one-line titles)',
 	'ci_all_day'    	 	=> 'All Day',
-	'ci_show_all_day_time'	=> 'Show All Day Time',
+	'ci_show_all_day_time'	=> 'Show Time (All Day Events)',
 	'ci_max_events'			=> 'Max Events',
 	'ci_debug_level'		=> 'Debug Level',
-	'ci_force_noon_anchor'	=> 'Force Noon Anchor',
+	'ci_force_noon_anchor'	=> 'Use Local Time',
 ];

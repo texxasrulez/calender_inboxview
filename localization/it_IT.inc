@@ -10,8 +10,8 @@ $labels['ci_demo_standup'] = 'Stand-up giornaliero';
 $labels['ci_demo_room'] = 'Sala conferenze A';
 $labels['ci_compact_mode'] = 'Compatto Prossimi eventi (titoli di una riga)';
 $labels['ci_all_day'] = 'Tutto il giorno';
-$labels['ci_show_all_day_time'] = 'Mostra per tutto il giorno';
+$labels['ci_show_all_day_time'] = 'Orario dello spettacolo (eventi di tutto il giorno)';
 $labels['ci_max_events'] = 'Eventi Max';
 $labels['ci_debug_level'] = 'Livello di debug';
-$labels['ci_force_noon_anchor'] = 'Ancora di Forza Mezzogiorno';
+$labels['ci_force_noon_anchor'] = 'Utilizzare l\'ora locale';
 ?>
