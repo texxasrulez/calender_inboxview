@@ -29,7 +29,7 @@ class calender_inboxview extends rcube_plugin
 
         
         $this->add_label('ci_prefs_section','ci_display_upcoming','ci_days_ahead','ci_compact_mode','ci_show_all_day_time','ci_max_events','ci_debug_level','ci_force_noon_anchor');
-// Settings UI block
+		// Settings UI block
         $this->add_hook('preferences_list', [$this, 'prefs_list']);
         $this->add_hook('preferences_save', [$this, 'prefs_save']);
 
@@ -47,7 +47,7 @@ class calender_inboxview extends rcube_plugin
         else if ($this->rc->task === 'calendar') {
             $this->include_script('js/ci_calendar_bridge.js');
         }
-else {
+		else {
                 $this->include_stylesheet("skins/classic/calender_inboxview.css");
             }
 
@@ -64,16 +64,10 @@ else {
             $this->rc->output->set_env('ci_max_events', (int)$this->rc->config->get('ci_max_events', 8));
             $this->rc->output->set_env('ci_debug_level', (string)$this->rc->config->get('ci_debug_level', 'basic'));
             $this->rc->output->set_env('ci_force_noon_anchor', (bool)$this->rc->config->get('ci_force_noon_anchor', true));
-$this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => $title, 'skin' => $skin]);
+			$this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => $title, 'skin' => $skin]);
         }
     }
 
-    /* -------------------- Settings: Mailbox View block -------------------- */
-
-    
-    /* -------------------- Settings: Mailbox View block -------------------- */
-    
-    /* -------------------- Settings: Mailbox View block -------------------- */
     public function prefs_list(array $args): array
     {
         // Only for the Mailbox preferences section
@@ -166,8 +160,6 @@ $this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => 
 
         return $args;
     }
-
-
 
     /* -------------------------- Data fetch endpoint ------------------------- */
 
@@ -284,7 +276,6 @@ $this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => 
         } catch (Throwable $t) { $this->dbg('calendar_api_top_error', ['err' => $t->getMessage()]); }
         return null;
     }
-
     
     private function try_calendar_http(DateTime $start, DateTime $end): ?array
     {
@@ -462,10 +453,6 @@ $this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => 
         ];
     }
 
-    
-    /**
-     * Roundcube user's timezone (falls back to PHP default or UTC).
-     */
     private function get_user_timezone(): DateTimeZone
     {
         $tzid = $this->rc->config->get('timezone', 'UTC');
@@ -476,7 +463,7 @@ $this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => 
         catch (Exception $e) { return new DateTimeZone('UTC'); }
     }
 
-private function value_to_iso8601($val): string
+	private function value_to_iso8601($val): string
     {
         $tz = $this->get_user_timezone();
         try {
