@@ -1,9 +1,14 @@
 <?php
 // Calendar InboxView plugin defaults
 
-$config['ci_display'] = true;               // Show panel in mailbox view
-$config['ci_days_ahead'] = 7;               // Days ahead to show
-$config['ci_compact'] = false;              // Compact mode (UI may style differently)
+// Show panel in mailbox view
+$config['ci_display'] = true;
+
+// Days ahead to show
+$config['ci_days_ahead'] = 7;
+
+// Compact mode (UI may style differently)
+$config['ci_compact'] = false;
 
 // Show time for all-day events (if false, shows "All Day")
 $config['ci_show_all_day_time'] = false;
