@@ -1,33 +1,37 @@
 <?php
-// calender_inboxview config
+// Calendar InboxView plugin defaults
 
-// Enable debug logging to logs/ci
+$config['ci_display'] = true;               // Show panel in mailbox view
+$config['ci_days_ahead'] = 7;               // Days ahead to show
+$config['ci_compact'] = false;              // Compact mode (UI may style differently)
+
+// Show time for all-day events (if false, shows "All Day")
+$config['ci_show_all_day_time'] = false;
+
+// Max events in the list
+$config['ci_max_events'] = 8;
+
+// Debug flag (legacy; use ci_debug_level if present)
 $config['ci_debug'] = false;
 
-// Provider mode:
-// - 'calendar_api' (default): attempt to call the Calendar plugin/driver in-process (best for Kolab/CalDAV forks).
-// - 'calendar_http': try JSON endpoints on ?_task=calendar (works across many versions).
-// - 'dummy': render sample events for UI testing.
+// Debug level: none | basic | verbose
+$config['ci_debug_level'] = 'basic';
+
+// Provider: 'calendar_api' or 'calendar_http'
 $config['ci_provider'] = 'calendar_api';
 
+// Force noon anchoring to prevent day drift on all-day & UTC-midnight inputs
+$config['ci_force_noon_anchor'] = true;
+
 // Calendar Template (use with 'calendar_http')
-// $config['ci_http_url_template'] = '&_action=load_events&_token={token}&start={start}&end={end}';
-
-// Whether to show the panel by default for new users (they can toggle in Settings → Preferences → Mailbox View)
-$config['ci_display'] = false;
-
-// How many days ahead to display
-$config['ci_days_ahead'] = 7;
+$config['ci_http_url_template'] = '&_action=load_events&_token={token}&start={start}&end={end}';
 
 // HTTP probe settings (only used if provider is 'calendar_http' or 'calendar_api' fallback)
 $config['ci_calendar_task'] = 'calendar';
 $config['ci_http_actions']  = ['list','events','event_list','load','load_events','get_events','fetch','index'];
 
 // Optionally narrow to specific calendar "sources" (IDs as strings)
-// $config['ci_sources'] = ['personal', 'work'];
+$config['ci_sources'] = ['personal'];
 
 // Disable HTTP action probing entirely (use only template if provided)
 $config['ci_disable_probes'] = true;
-
-// Compact mode (one-line titles)
-$config['ci_compact'] = false;
