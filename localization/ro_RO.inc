@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = 'Calendar demo: test de sincronizare';
 $labels['ci_demo_standup'] = 'Stand-up zilnic';
 $labels['ci_demo_room'] = 'Sala de conferințe A';
 $labels['ci_compact_mode'] = 'Compact Evenimente viitoare (titluri de o linie)';
+$labels['ci_all_day'] = 'Toată ziua';
+$labels['ci_show_all_day_time'] = 'Arată toată ziua Ora';
+$labels['ci_max_events'] = 'Evenimente Max';
+$labels['ci_debug_level'] = 'Nivel de depanare';
+$labels['ci_force_noon_anchor'] = 'Force Noon Anchor';
 ?>

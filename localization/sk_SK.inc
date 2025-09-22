@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = 'Ukážka kalendára: test synchronizácie';
 $labels['ci_demo_standup'] = 'Denná pohotovosť';
 $labels['ci_demo_room'] = 'Konferenčná miestnosť A';
 $labels['ci_compact_mode'] = 'Kompaktné nadchádzajúce udalosti (jednoriadkové názvy)';
+$labels['ci_all_day'] = 'Celý deň';
+$labels['ci_show_all_day_time'] = 'Zobraziť celodenný čas';
+$labels['ci_max_events'] = 'Max Events';
+$labels['ci_debug_level'] = 'Úroveň ladenia';
+$labels['ci_force_noon_anchor'] = 'Kotva Force Noon';
 ?>

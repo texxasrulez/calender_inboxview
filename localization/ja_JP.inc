@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = 'カレンダーデモ：同期テスト';
 $labels['ci_demo_standup'] = 'デイリー・スタンドアップ';
 $labels['ci_demo_room'] = '会議室A';
 $labels['ci_compact_mode'] = 'コンパクトな今後のイベント（一行タイトル）';
+$labels['ci_all_day'] = '終日';
+$labels['ci_show_all_day_time'] = '終日上映';
+$labels['ci_max_events'] = 'マックス・イベント';
+$labels['ci_debug_level'] = 'デバッグレベル';
+$labels['ci_force_noon_anchor'] = 'フォース・ヌーン・アンカー';
 ?>

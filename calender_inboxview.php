@@ -14,6 +14,11 @@ class calender_inboxview extends rcube_plugin
 
     public function init(): void
     {
+        // Load localization and register settings hooks regardless of task
+        $this->add_texts('localization/', true);
+        $this->add_hook('preferences_list', [$this, 'prefs_list']);
+        $this->add_hook('preferences_save', [$this, 'prefs_save']);
+
         $this->rc = rcmail::get_instance();
 
         $this->load_config();
@@ -22,7 +27,9 @@ class calender_inboxview extends rcube_plugin
         $this->add_texts('localization/');
         $this->add_label('ci_no_events', 'ci_panel_title', 'ci_demo_sync', 'ci_demo_standup', 'ci_demo_room', 'ci_prefs_section', 'ci_display_upcoming', 'ci_days_ahead', 'ci_compact_mode');
 
-        // Settings UI block
+        
+        $this->add_label('ci_prefs_section','ci_display_upcoming','ci_days_ahead','ci_compact_mode','ci_show_all_day_time','ci_max_events','ci_debug_level','ci_force_noon_anchor');
+// Settings UI block
         $this->add_hook('preferences_list', [$this, 'prefs_list']);
         $this->add_hook('preferences_save', [$this, 'prefs_save']);
 
@@ -53,65 +60,114 @@ else {
             $this->rc->output->set_env('ci_days_ahead', $days);
             $this->rc->output->set_env('ci_panel_title', $title);
             $this->rc->output->set_env('ci_compact', (bool)$this->rc->config->get('ci_compact', false));
-            $this->rc->output->set_env('ci_debug', (bool)$this->rc->config->get('ci_debug', false));
-
-            $this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => $title, 'skin' => $skin]);
+            $this->rc->output->set_env('ci_show_all_day_time', (bool)$this->rc->config->get('ci_show_all_day_time', false));
+            $this->rc->output->set_env('ci_max_events', (int)$this->rc->config->get('ci_max_events', 8));
+            $this->rc->output->set_env('ci_debug_level', (string)$this->rc->config->get('ci_debug_level', 'basic'));
+            $this->rc->output->set_env('ci_force_noon_anchor', (bool)$this->rc->config->get('ci_force_noon_anchor', true));
+$this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => $title, 'skin' => $skin]);
         }
     }
 
     /* -------------------- Settings: Mailbox View block -------------------- */
 
+    
+    /* -------------------- Settings: Mailbox View block -------------------- */
+    
+    /* -------------------- Settings: Mailbox View block -------------------- */
     public function prefs_list(array $args): array
     {
+        // Only for the Mailbox preferences section
         if (($args['section'] ?? '') !== 'mailbox') {
             return $args;
         }
 
-        $field_id = 'rcmfd_ci_display';
-        $checked  = $this->rc->config->get('ci_display', false) ? ' checked="checked"' : '';
-        $checkbox = sprintf('<input type="checkbox" name="_ci_display" id="%s" value="1"%s>', $field_id, $checked);
-
-        $days_id  = 'rcmfd_ci_days_ahead';
-        $days     = (int)$this->rc->config->get('ci_days_ahead', 7);
-        $days_inp = sprintf('<input type="number" min="1" max="60" name="_ci_days_ahead" id="%s" value="%d" class="input" />', $days_id, $days);
-
         $block_id = 'ci_calendar';
-        $args['blocks'][$block_id]['name'] = $this->gettext('ci_prefs_section');
+        $args['blocks'][$block_id]['name'] = $this->gettext('ci_prefs_section') ?: 'Calendar InboxView';
+
+        $display = (bool) $this->rc->config->get('ci_display', true);
+        $days    = (int)  $this->rc->config->get('ci_days_ahead', 7);
+        $compact = (bool) $this->rc->config->get('ci_compact', false);
+        $show_all_day_time = (bool) $this->rc->config->get('ci_show_all_day_time', false);
+        $max_events = (int) $this->rc->config->get('ci_max_events', 8);
+        $debug_level = (string) $this->rc->config->get('ci_debug_level', 'basic');
+        $force_noon = (bool) $this->rc->config->get('ci_force_noon_anchor', true);
+
         $args['blocks'][$block_id]['options']['ci_display'] = [
-            'title'   => rcube::Q($this->gettext('ci_display_upcoming')),
-            'content' => $checkbox,
-        ];
-        $args['blocks'][$block_id]['options']['ci_days_ahead'] = [
-            'title'   => rcube::Q($this->gettext('ci_days_ahead')),
-            'content' => $days_inp,
-        ];
-        $args['blocks'][$block_id]['options']['ci_compact'] = [
-            'title'   => rcube::Q($this->gettext('ci_compact_mode')),
-            'content' => sprintf('<input type="checkbox" name="_ci_compact" id="rcmfd_ci_compact" value="1"%s>', $this->rc->config->get('ci_compact', false) ? ' checked="checked"' : '')
+            'title'   => rcube::Q($this->gettext('ci_display_upcoming') ?: 'Show Upcoming Events'),
+            'content' => sprintf('<input type="checkbox" name="_ci_display" value="1"%s>', $display ? ' checked="checked"' : '')
         ];
 
+        $args['blocks'][$block_id]['options']['ci_days_ahead'] = [
+            'title'   => rcube::Q($this->gettext('ci_days_ahead') ?: 'Days Ahead'),
+            'content' => sprintf('<input type="number" min="1" max="30" step="1" name="_ci_days_ahead" value="%d" class="input" />', $days)
+        ];
+
+        $args['blocks'][$block_id]['options']['ci_compact'] = [
+            'title'   => rcube::Q($this->gettext('ci_compact_mode') ?: 'Compact Mode'),
+            'content' => sprintf('<input type="checkbox" name="_ci_compact" value="1"%s>', $compact ? ' checked="checked"' : '')
+        ];
+
+        $args['blocks'][$block_id]['options']['ci_show_all_day_time'] = [
+            'title'   => rcube::Q($this->gettext('ci_show_all_day_time') ?: 'Show All Day Time'),
+            'content' => sprintf('<input type="checkbox" name="_ci_show_all_day_time" value="1"%s>', $show_all_day_time ? ' checked="checked"' : '')
+        ];
+
+        $args['blocks'][$block_id]['options']['ci_max_events'] = [
+            'title'   => rcube::Q($this->gettext('ci_max_events') ?: 'Max Events'),
+            'content' => sprintf('<input type="number" min="1" max="20" step="1" name="_ci_max_events" value="%d" class="input" />', $max_events)
+        ];
+
+        $select = '<select name="_ci_debug_level" class="input">'
+                . '<option value="none"' . ($debug_level==='none' ? ' selected="selected"' : '') . '>none</option>'
+                . '<option value="basic"' . ($debug_level==='basic' ? ' selected="selected"' : '') . '>basic</option>'
+                . '<option value="verbose"' . ($debug_level==='verbose' ? ' selected="selected"' : '') . '>verbose</option>'
+                . '</select>';
+        $args['blocks'][$block_id]['options']['ci_debug_level'] = [
+            'title'   => rcube::Q($this->gettext('ci_debug_level') ?: 'Debug Level'),
+            'content' => $select
+        ];
+
+        $args['blocks'][$block_id]['options']['ci_force_noon_anchor'] = [
+            'title'   => rcube::Q($this->gettext('ci_force_noon_anchor') ?: 'Force Noon Anchor'),
+            'content' => sprintf('<input type="checkbox" name="_ci_force_noon_anchor" value="1"%s>', $force_noon ? ' checked="checked"' : '')
+        ];
 
         return $args;
     }
 
+
+
+    
+    
     public function prefs_save(array $args): array
     {
         if (($args['section'] ?? '') !== 'mailbox') {
             return $args;
         }
 
-        $display = (bool) rcube_utils::get_input_value('_ci_display', rcube_utils::INPUT_POST);
-        $days    = (int)  rcube_utils::get_input_value('_ci_days_ahead', rcube_utils::INPUT_POST);
-        if ($days < 1)  $days = 1;
-        if ($days > 60) $days = 60;
+        $args['prefs']['ci_display'] = (bool) rcube_utils::get_input_value('_ci_display', rcube_utils::INPUT_POST);
 
-        $args['prefs']['ci_display']    = $display;
+        $days = (int) rcube_utils::get_input_value('_ci_days_ahead', rcube_utils::INPUT_POST);
+        if ($days < 1) $days = 7; if ($days > 30) $days = 30;
         $args['prefs']['ci_days_ahead'] = $days;
-        $args['prefs']['ci_compact']   = (bool) rcube_utils::get_input_value('_ci_compact', rcube_utils::INPUT_POST);
 
-        $this->dbg('prefs_save', ['ci_display' => $display, 'ci_days_ahead' => $days, 'ci_compact' => $args['prefs']['ci_compact']]);
+        $args['prefs']['ci_compact'] = (bool) rcube_utils::get_input_value('_ci_compact', rcube_utils::INPUT_POST);
+        $args['prefs']['ci_show_all_day_time'] = (bool) rcube_utils::get_input_value('_ci_show_all_day_time', rcube_utils::INPUT_POST);
+
+        $maxe = (int) rcube_utils::get_input_value('_ci_max_events', rcube_utils::INPUT_POST);
+        if ($maxe < 1) $maxe = 8; if ($maxe > 20) $maxe = 20;
+        $args['prefs']['ci_max_events'] = $maxe;
+
+        $lvl = (string) rcube_utils::get_input_value('_ci_debug_level', rcube_utils::INPUT_POST);
+        if (!in_array($lvl, ['none','basic','verbose'], true)) $lvl = 'basic';
+        $args['prefs']['ci_debug_level'] = $lvl;
+
+        $args['prefs']['ci_force_noon_anchor'] = (bool) rcube_utils::get_input_value('_ci_force_noon_anchor', rcube_utils::INPUT_POST);
+
         return $args;
     }
+
+
 
     /* -------------------------- Data fetch endpoint ------------------------- */
 
@@ -505,10 +561,12 @@ private function value_to_iso8601($val): string
 
     /* ------------------------------- Debugging ------------------------------ */
 
-    private function dbg(string $event, array $ctx = []): void
+    private function dbg(string $event, array $ctx = [], string $level = 'basic'): void
     {
-        if (!(bool)$this->rc->config->get('ci_debug', false)) return;
-        $line = '[' . $event . '] ' . json_encode($ctx);
-        rcube::write_log('ci', $line);
+        $legacy = (bool) $this->rc->config->get('ci_debug', false);
+        $lvl = (string) $this->rc->config->get('ci_debug_level', $legacy ? 'basic' : 'basic');
+        if ($lvl === 'none' && !$legacy) return;
+        if ($lvl === 'basic' && $level === 'verbose' && !$legacy) return;
+        rcube::write_log('ci', '[' . $event . '] ' . json_encode($ctx));
     }
 }

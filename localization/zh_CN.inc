@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = '日历演示：同步测试';
 $labels['ci_demo_standup'] = '每日站立';
 $labels['ci_demo_room'] = 'A 会议室';
 $labels['ci_compact_mode'] = '紧凑型近期活动（单行标题）';
+$labels['ci_all_day'] = '全天';
+$labels['ci_show_all_day_time'] = '全天演出时间';
+$labels['ci_max_events'] = '最大活动';
+$labels['ci_debug_level'] = '调试级别';
+$labels['ci_force_noon_anchor'] = '部队午间锚';
 ?>

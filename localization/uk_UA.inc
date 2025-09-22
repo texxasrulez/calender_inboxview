@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = 'Демонстрація календаря: тест
 $labels['ci_demo_standup'] = 'Щоденна зарядка';
 $labels['ci_demo_room'] = 'Конференц-зал А';
 $labels['ci_compact_mode'] = 'Компактні майбутні події (однорядкові заголовки)';
+$labels['ci_all_day'] = 'Цілий день';
+$labels['ci_show_all_day_time'] = 'Показати весь денний час';
+$labels['ci_max_events'] = 'Max Events';
+$labels['ci_debug_level'] = 'Рівень налагодження';
+$labels['ci_force_noon_anchor'] = 'Сила полуденного якоря';
 ?>

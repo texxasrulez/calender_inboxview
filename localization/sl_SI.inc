@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = 'Demo koledarja: preskus sinhronizacije';
 $labels['ci_demo_standup'] = 'Vsakodnevno vstajanje';
 $labels['ci_demo_room'] = 'Konferenčna dvorana A';
 $labels['ci_compact_mode'] = 'Kompaktni prihajajoči dogodki (enovrstični naslovi)';
+$labels['ci_all_day'] = 'Ves dan';
+$labels['ci_show_all_day_time'] = 'Prikaži ves dnevni čas';
+$labels['ci_max_events'] = 'Max dogodki';
+$labels['ci_debug_level'] = 'Raven za odpravljanje napak';
+$labels['ci_force_noon_anchor'] = 'Sidro Force Noon';
 ?>

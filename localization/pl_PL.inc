@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = 'Demo kalendarza: test synchronizacji';
 $labels['ci_demo_standup'] = 'Codzienny stand-up';
 $labels['ci_demo_room'] = 'Sala konferencyjna A';
 $labels['ci_compact_mode'] = 'Kompaktowe nadchodzące wydarzenia (tytuły jednowierszowe)';
+$labels['ci_all_day'] = 'Cały dzień';
+$labels['ci_show_all_day_time'] = 'Pokaz przez cały dzień';
+$labels['ci_max_events'] = 'Max Events';
+$labels['ci_debug_level'] = 'Poziom debugowania';
+$labels['ci_force_noon_anchor'] = 'Kotwica Force Noon';
 ?>

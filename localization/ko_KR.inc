@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = '캘린더 데모: 동기화 테스트';
 $labels['ci_demo_standup'] = '데일리 스탠드업';
 $labels['ci_demo_room'] = '회의실 A';
 $labels['ci_compact_mode'] = '예정된 이벤트 요약(한 줄 제목)';
+$labels['ci_all_day'] = '하루 종일';
+$labels['ci_show_all_day_time'] = '하루 종일 시간 표시';
+$labels['ci_max_events'] = '최대 이벤트';
+$labels['ci_debug_level'] = '디버그 수준';
+$labels['ci_force_noon_anchor'] = '강제 정오 앵커';
 ?>

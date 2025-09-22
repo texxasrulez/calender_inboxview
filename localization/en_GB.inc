@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = 'Calendar demo: sync test';
 $labels['ci_demo_standup'] = 'Daily stand-up';
 $labels['ci_demo_room'] = 'Conference Room A';
 $labels['ci_compact_mode'] = 'Compact Upcoming Events (one-line titles)';
+$labels['ci_all_day'] = 'All Day';
+$labels['ci_show_all_day_time'] = 'Show All Day Time';
+$labels['ci_max_events'] = 'Max Events';
+$labels['ci_debug_level'] = 'Debug Level';
+$labels['ci_force_noon_anchor'] = 'Force Noon Anchor';
 ?>

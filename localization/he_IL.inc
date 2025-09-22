@@ -9,4 +9,9 @@ $labels['ci_demo_sync'] = 'הדגמת לוח שנה: בדיקת סנכרון';
 $labels['ci_demo_standup'] = 'ישיבת בוקר יומית';
 $labels['ci_demo_room'] = 'חדר ישיבות A';
 $labels['ci_compact_mode'] = 'אירועים קרובים קומפקטיים (כותרות בשורה אחת)';
+$labels['ci_all_day'] = 'כל היום';
+$labels['ci_show_all_day_time'] = 'הצג את כל שעות היום';
+$labels['ci_max_events'] = 'אירועים מקסימליים';
+$labels['ci_debug_level'] = 'רמת ניפוי באגים';
+$labels['ci_force_noon_anchor'] = 'כוח צהריים עוגן';
 ?>
