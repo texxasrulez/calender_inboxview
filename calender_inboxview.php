@@ -406,23 +406,89 @@ else {
         ];
     }
 
-    private function value_to_iso8601($val): string
+    
+    /**
+     * Roundcube user's timezone (falls back to PHP default or UTC).
+     */
+    private function get_user_timezone(): DateTimeZone
     {
-        if ($val instanceof DateTimeInterface) return $val->format(DateTime::ATOM);
-        if (is_array($val)) {
-            if (isset($val['unixtime']) && is_numeric($val['unixtime'])) return gmdate('c', (int)$val['unixtime']);
-            if (isset($val['date'])) { $ts = strtotime((string)$val['date']); if ($ts !== false) return gmdate('c', $ts); }
+        $tzid = $this->rc->config->get('timezone', 'UTC');
+        if (!$tzid || $tzid === 'auto') {
+            $tzid = @date_default_timezone_get() ?: 'UTC';
         }
-        if (is_numeric($val)) return gmdate('c', (int)$val);
-        $val = trim((string)$val);
-        if (preg_match('/^\d{8}T\d{6}Z?$/', $val)) {
-            $dt = DateTime::createFromFormat('Ymd\THis\Z', $val, new DateTimeZone('UTC'));
-            if (!$dt) $dt = DateTime::createFromFormat('Ymd\THis', $val, new DateTimeZone('UTC'));
-            if ($dt) return $dt->format(DateTime::ATOM);
-        }
-        $ts = strtotime($val);
-        return $ts !== false ? gmdate('c', $ts) : gmdate('c');
+        try { return new DateTimeZone($tzid); }
+        catch (Exception $e) { return new DateTimeZone('UTC'); }
     }
+
+private function value_to_iso8601($val): string
+    {
+        $tz = $this->get_user_timezone();
+        try {
+            // DateTime already
+            if ($val instanceof DateTimeInterface) {
+                return (new DateTimeImmutable($val->format('c')))->setTimezone($tz)->format(DateTimeInterface::ATOM);
+            }
+
+            // Array forms
+            if (is_array($val)) {
+                if (isset($val['unixtime']) && is_numeric($val['unixtime'])) {
+                    return (new DateTimeImmutable('@' . (int)$val['unixtime']))->setTimezone($tz)->format(DateTimeInterface::ATOM);
+                }
+                if (isset($val['date'])) {
+                    $s = trim((string)$val['date']);
+                    // date-only => set to LOCAL NOON
+                    if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $s)) {
+                        return (new DateTimeImmutable($s . ' 12:00:00', $tz))->format(DateTimeInterface::ATOM);
+                    }
+                    // UTC midnight patterns => bump to LOCAL NOON of that date
+                    if (preg_match('/^(\d{4}-\d{2}-\d{2})T00:00:00(?:\.000)?(?:Z|\+00:00)$/', $s, $m)) {
+                        return (new DateTimeImmutable($m[1] . ' 12:00:00', $tz))->format(DateTimeInterface::ATOM);
+                    }
+                    $has_tz = (bool)preg_match('/(Z|[+\-]\d{2}(:?\d{2})?)$/i', $s) || (bool)preg_match('/[+\-]\d{2}:\d{2}$/', $s);
+                    $dt = $has_tz ? new DateTimeImmutable($s) : new DateTimeImmutable($s, $tz);
+                    return $dt->setTimezone($tz)->format(DateTimeInterface::ATOM);
+                }
+            }
+
+            // Numeric
+            if (is_numeric($val)) {
+                return (new DateTimeImmutable('@' . (int)$val))->setTimezone($tz)->format(DateTimeInterface::ATOM);
+            }
+
+            // String forms
+            $s = trim((string)$val);
+            if ($s === '') {
+                return (new DateTimeImmutable('now', $tz))->format(DateTimeInterface::ATOM);
+            }
+
+            // Compact ICS-like
+            if (preg_match('/^\d{8}T\d{6}Z?$/', $s)) {
+                $dt = DateTime::createFromFormat('Ymd\THis\Z', $s, new DateTimeZone('UTC'));
+                if (!$dt) $dt = DateTime::createFromFormat('Ymd\THis', $s, $tz);
+                if ($dt instanceof DateTimeInterface) {
+                    return (new DateTimeImmutable($dt->format('c')))->setTimezone($tz)->format(DateTimeInterface::ATOM);
+                }
+            }
+
+            // date-only => LOCAL NOON
+            if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $s)) {
+                return (new DateTimeImmutable($s . ' 12:00:00', $tz))->format(DateTimeInterface::ATOM);
+            }
+
+            // UTC midnight => bump to LOCAL NOON
+            if (preg_match('/^(\d{4}-\d{2}-\d{2})T00:00:00(?:\.000)?(?:Z|\+00:00)$/', $s, $m)) {
+                return (new DateTimeImmutable($m[1] . ' 12:00:00', $tz))->format(DateTimeInterface::ATOM);
+            }
+
+            // General case
+            $has_tz = (bool)preg_match('/(Z|[+\-]\d{2}(:?\d{2})?)$/i', $s) || (bool)preg_match('/[+\-]\d{2}:\d{2}$/', $s);
+            $dt = $has_tz ? new DateTimeImmutable($s) : new DateTimeImmutable($s, $tz);
+            return $dt->setTimezone($tz)->format(DateTimeInterface::ATOM);
+        } catch (Exception $e) {
+            return (new DateTimeImmutable('now', $tz))->format(DateTimeInterface::ATOM);
+        }
+    }
+
 
     private function dummy_events(DateTime $start, DateTime $end): array
     {
