@@ -20,10 +20,10 @@ $config['ci_max_events'] = 8;
 $config['ci_debug'] = false;
 
 // Debug level: none | basic | verbose
-$config['ci_debug_level'] = 'basic';
+$config['ci_debug_level'] = 'none';
 
 // Provider: 'calendar_api' or 'calendar_http'
-$config['ci_provider'] = 'calendar_api';
+$config['ci_provider'] = 'calendar_http';
 
 // Force noon anchoring to prevent day drift on all-day & UTC-midnight inputs
 $config['ci_force_noon_anchor'] = true;

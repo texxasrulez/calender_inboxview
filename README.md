@@ -1,4 +1,13 @@
 # calender_inboxview (Roundcube plugin)
+-------------------------------
+
+[![Packagist](https://img.shields.io/packagist/dt/texxasrulez/calendar_inboxview?style=flat-square)](https://packagist.org/packages/texxasrulez/calendar_inboxview)
+[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/calendar_inboxview?style=flat-square)](https://packagist.org/packages/texxasrulez/calendar_inboxview)
+[![Project license](https://img.shields.io/github/license/texxasrulez/calendar_inboxview?style=flat-square)](https://github.com/texxasrulez/calendar_inboxview/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/texxasrulez/calendar_inboxview?style=flat-square&logo=github)](https://github.com/texxasrulez/calendar_inboxview/stargazers)
+[![issues](https://img.shields.io/github/issues/texxasrulez/calendar_inboxview)](https://github.com/texxasrulez/calendar_inboxview/issues)
+[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-blue.svg?style=flat-square&logo=paypal)](https://www.paypal.me/texxasrulez)
+
 
 > Show upcoming calendar events in the Mail (mailbox) view.
 
@@ -38,8 +47,6 @@ in `config.inc.php` to validate the UI without touching calendars.
 ## Localization
 The `localization/` folder contains labels with keys like:
 - `ci_prefs_section`, `ci_display_upcoming`, `ci_days_ahead`, `ci_panel_title`, `ci_no_events`
-
-Add more locales by copying `en_US.inc.php` and translating the strings.
 
 ## Notes
 - The panel mounts just under the folder list in most skins. If your layout is exotic,
