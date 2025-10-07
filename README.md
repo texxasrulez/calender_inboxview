@@ -1,11 +1,11 @@
 # calender_inboxview (Roundcube plugin)
 -------------------------------
 
-[![Packagist](https://img.shields.io/packagist/dt/texxasrulez/calendar_inboxview?style=flat-square)](https://packagist.org/packages/texxasrulez/calendar_inboxview)
-[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/calendar_inboxview?style=flat-square)](https://packagist.org/packages/texxasrulez/calendar_inboxview)
-[![Project license](https://img.shields.io/github/license/texxasrulez/calendar_inboxview?style=flat-square)](https://github.com/texxasrulez/calendar_inboxview/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/texxasrulez/calendar_inboxview?style=flat-square&logo=github)](https://github.com/texxasrulez/calendar_inboxview/stargazers)
-[![issues](https://img.shields.io/github/issues/texxasrulez/calendar_inboxview)](https://github.com/texxasrulez/calendar_inboxview/issues)
+[![Packagist](https://img.shields.io/packagist/dt/texxasrulez/calender_inboxview?style=flat-square)](https://packagist.org/packages/texxasrulez/calender_inboxview)
+[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/calender_inboxview?style=flat-square)](https://packagist.org/packages/texxasrulez/calender_inboxview)
+[![Project license](https://img.shields.io/github/license/texxasrulez/calender_inboxview?style=flat-square)](https://github.com/texxasrulez/calender_inboxview/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/texxasrulez/calender_inboxview?style=flat-square&logo=github)](https://github.com/texxasrulez/calender_inboxview/stargazers)
+[![issues](https://img.shields.io/github/issues/texxasrulez/calender_inboxview)](https://github.com/texxasrulez/calender_inboxview/issues)
 [![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-blue.svg?style=flat-square&logo=paypal)](https://www.paypal.me/texxasrulez)
 
 
