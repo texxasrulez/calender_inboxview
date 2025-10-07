@@ -1,5 +1,4 @@
 # calender_inboxview (Roundcube plugin)
--------------------------------
 
 [![Packagist](https://img.shields.io/packagist/dt/texxasrulez/calender_inboxview?style=plastic)](https://packagist.org/packages/texxasrulez/calender_inboxview)
 [![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/calender_inboxview?style=plastic)](https://packagist.org/packages/texxasrulez/calender_inboxview)
