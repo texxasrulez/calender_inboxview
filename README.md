@@ -1,12 +1,12 @@
 # calender_inboxview (Roundcube plugin)
 -------------------------------
 
-[![Packagist](https://img.shields.io/packagist/dt/texxasrulez/calender_inboxview?style=flat-square)](https://packagist.org/packages/texxasrulez/calender_inboxview)
-[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/calender_inboxview?style=flat-square)](https://packagist.org/packages/texxasrulez/calender_inboxview)
-[![Project license](https://img.shields.io/github/license/texxasrulez/calender_inboxview?style=flat-square)](https://github.com/texxasrulez/calender_inboxview/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/texxasrulez/calender_inboxview?style=flat-square&logo=github)](https://github.com/texxasrulez/calender_inboxview/stargazers)
-[![issues](https://img.shields.io/github/issues/texxasrulez/calender_inboxview)](https://github.com/texxasrulez/calender_inboxview/issues)
-[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-blue.svg?style=flat-square&logo=paypal)](https://www.paypal.me/texxasrulez)
+[![Packagist](https://img.shields.io/packagist/dt/texxasrulez/calender_inboxview?style=social)](https://packagist.org/packages/texxasrulez/calender_inboxview)
+[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/calender_inboxview?style=social)](https://packagist.org/packages/texxasrulez/calender_inboxview)
+[![Project license](https://img.shields.io/github/license/texxasrulez/calender_inboxview?style=social)](https://github.com/texxasrulez/calender_inboxview/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/texxasrulez/calender_inboxview?style=social&logo=github)](https://github.com/texxasrulez/calender_inboxview/stargazers)
+[![issues](https://img.shields.io/github/issues/texxasrulez/calender_inboxview?style=social)](https://github.com/texxasrulez/calender_inboxview/issues)
+[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-blue.svg?style=social&logo=paypal)](https://www.paypal.me/texxasrulez)
 
 
 > Show upcoming calendar events in the Mail (mailbox) view.
