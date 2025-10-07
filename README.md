@@ -5,7 +5,7 @@
 [![Project license](https://img.shields.io/github/license/texxasrulez/calender_inboxview?style=plastic)](https://github.com/texxasrulez/calender_inboxview/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/texxasrulez/calender_inboxview?style=plastic&logo=github)](https://github.com/texxasrulez/calender_inboxview/stargazers)
 [![issues](https://img.shields.io/github/issues/texxasrulez/calender_inboxview?style=plastic)](https://github.com/texxasrulez/calender_inboxview/issues)
-[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-blue.svg?style=plastic&logo=paypal)](https://www.paypal.me/texxasrulez)
+[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-money_please-blue.svg?style=plastic&logo=paypal)](https://www.paypal.me/texxasrulez)
 
 
 > Show upcoming calendar events in the Mail (mailbox) view.
