@@ -51,3 +51,7 @@ The `localization/` folder contains labels with keys like:
 ## Notes
 - The panel mounts just under the folder list in most skins. If your layout is exotic,
   adjust the `findMountPoint()` selector list in `js/calender_inboxview.js`.
+
+**Screenshot**
+
+![Calendar Inbox View](images/calendar_inboxview_screenshot.png?raw=true "Calendar Inbox View Screenshot")
