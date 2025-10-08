@@ -55,3 +55,4 @@ The `localization/` folder contains labels with keys like:
 **Screenshot**
 
 ![Calendar Inbox View](images/calendar_inboxview_screenshot.png?raw=true "Calendar Inbox View Screenshot")
+![Calendar Inbox SettingsView](images/calendar_inboxview_settings_screenshot.png?raw=true "Calendar Inbox View Settings Screenshot")
