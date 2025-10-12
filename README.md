@@ -9,7 +9,7 @@
 [![GitHub Forks](https://img.shields.io/github/forks/texxasrulez/calender_inboxview?style=plastic&logo=github&logoColor=white&label=Forks&labelColor=blue&color=darkorange)](https://github.com/texxasrulez/calender_inboxview/forks)
 [![Donate Paypal](https://img.shields.io/badge/Paypal-Money_Please!-blue.svg?style=plastic&labelColor=blue&color=forestgreen&logo=paypal)](https://www.paypal.me/texxasrulez)
 
-> Show upcoming calendar events in the Mail (mailbox) view.
+Show upcoming calendar events in the Mail (mailbox) view.
 
 ## What it does
 - Adds a panel in the Mailbox view that lists upcoming events for the next _N_ days.
