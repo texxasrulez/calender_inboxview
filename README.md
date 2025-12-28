@@ -1,5 +1,6 @@
 # calender_inboxview (Roundcube plugin)
 
+![Downloads](https://img.shields.io/github/downloads/texxasrulez/calender_inboxview/total?style=plastic&logo=github&logoColor=white&label=Downloads&labelColor=aqua&color=blue)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/texxasrulez/calender_inboxview?style=plastic&logo=packagist&logoColor=white&label=Downloads&labelColor=blue&color=gold)](https://packagist.org/packages/texxasrulez/calender_inboxview)
 [![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/calender_inboxview?style=plastic&logo=packagist&logoColor=white&label=Version&labelColor=blue&color=limegreen)](https://packagist.org/packages/texxasrulez/calender_inboxview)
 [![Github License](https://img.shields.io/github/license/texxasrulez/calender_inboxview?style=plastic&logo=github&label=License&labelColor=blue&color=coral)](https://github.com/texxasrulez/calender_inboxview/LICENSE)
