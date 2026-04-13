@@ -9,6 +9,20 @@ declare(strict_types=1);
 
 class calender_inboxview extends rcube_plugin
 {
+    const PLUGIN_VERSION = '1.1.0';
+    const PLUGIN_INFO = array(
+        'name' => 'calender_inboxview',
+        'vendor' => 'Gene Hawkins',
+        'version' => self::PLUGIN_VERSION,
+        'license' => 'GPL-3.0',
+        'uri' => 'https://github.com/texxasrulez/calender_inboxview',
+    );
+
+    public static function info(): array
+    {
+        return self::PLUGIN_INFO;
+    }
+
     public $task = 'mail|settings|calendar';
     private rcube $rc;
 

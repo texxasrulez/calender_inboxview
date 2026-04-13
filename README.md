@@ -57,3 +57,15 @@ The `localization/` folder contains labels with keys like:
 
 ![Calendar Inbox View](images/calendar_inboxview_screenshot.png?raw=true "Calendar Inbox View Screenshot")
 ![Calendar Inbox SettingsView](images/calendar_inboxview_settings_screenshot.png?raw=true "Calendar Inbox View Settings Screenshot")
+
+## Versioning
+- `calender_inboxview` now keeps its canonical version in `calender_inboxview::PLUGIN_VERSION` inside `calender_inboxview.php`.
+- `calender_inboxview::info()` exposes the plugin metadata array used for self-identification.
+- Development builds should use a `+dev` suffix such as `1.0.0+dev`.
+- Release builds should use a clean tagged version such as `1.0.0`.
+
+For a release bump:
+1. Update `calender_inboxview::PLUGIN_VERSION` in `calender_inboxview.php` or run `sh scripts/bump-version.sh 1.0.0`.
+2. Update `CHANGELOG.md`.
+3. Create the matching release tag after verification.
+
