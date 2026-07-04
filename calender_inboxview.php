@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 class calender_inboxview extends rcube_plugin
 {
-    const PLUGIN_VERSION = '1.1.0';
+    const PLUGIN_VERSION = '1.0.2';
     const PLUGIN_INFO = array(
         'name' => 'calender_inboxview',
         'vendor' => 'Gene Hawkins',
@@ -24,6 +24,7 @@ class calender_inboxview extends rcube_plugin
     }
 
     public $task = 'mail|settings|calendar';
+    public $version = self::PLUGIN_VERSION;
     private rcube $rc;
 
     public function init(): void
@@ -189,6 +190,15 @@ class calender_inboxview extends rcube_plugin
 
         if (!(bool)$this->rc->config->get('ci_display', false)) {
             $this->dbg('display_pref_off');
+            $this->return_events([]);
+            return;
+        }
+
+        if ((bool)$this->rc->config->get('ci_skip_additional_imap_remote', true) && $this->additional_imap_remote_active()) {
+            $this->dbg('additional_imap_remote_skip', [
+                'session_user' => $this->safe_log_value($_SESSION['username'] ?? ''),
+                'roundcube_user' => $this->safe_log_value($this->rc->user->data['username'] ?? ''),
+            ]);
             $this->return_events([]);
             return;
         }
@@ -412,6 +422,22 @@ class calender_inboxview extends rcube_plugin
             $pairs[] = $k . '=' . rawurlencode((string)$v);
         }
         return implode('; ', $pairs);
+    }
+
+    private function additional_imap_remote_active(): bool
+    {
+        $roundcube_user = strtolower((string)($this->rc->user->data['username'] ?? ''));
+        $session_user = strtolower((string)($_SESSION['username'] ?? $roundcube_user));
+
+        return $roundcube_user !== ''
+            && $session_user !== ''
+            && $session_user !== $roundcube_user
+            && !empty($_SESSION['additional_imap_id']);
+    }
+
+    private function safe_log_value(string $value): string
+    {
+        return trim(preg_replace('/[\r\n\t]+/', ' ', $value));
     }
 
     /* ----------------------------- Normalization ---------------------------- */

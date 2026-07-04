@@ -41,6 +41,10 @@ on a different action name, let me know — it's trivial to add another try.
 If nothing matches, the panel gracefully shows **No upcoming events**. You can also switch the provider to `"dummy"`
 in `config.inc.php` to validate the UI without touching calendars.
 
+When `additional_imap` is active and the current mail session is switched to a remote IMAP account, this plugin skips
+calendar/DAV fetching by default. This avoids sending remote IMAP credentials to calendar/libkolab DAV backends. To
+disable that guard, set `$config['ci_skip_additional_imap_remote'] = false;` in `plugins/calender_inboxview/config.inc.php`.
+
 ## Skinning
 - Basic styles for `classic` and `elastic` skins are included. If your custom skin is named differently,
   the plugin will fall back to the `classic` stylesheet.
@@ -68,4 +72,3 @@ For a release bump:
 1. Update `calender_inboxview::PLUGIN_VERSION` in `calender_inboxview.php` or run `sh scripts/bump-version.sh 1.0.0`.
 2. Update `CHANGELOG.md`.
 3. Create the matching release tag after verification.
-

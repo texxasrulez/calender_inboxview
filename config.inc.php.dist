@@ -20,10 +20,15 @@ $config['ci_max_events'] = 8;
 $config['ci_debug'] = false;
 
 // Debug level: none | basic | verbose
-$config['ci_debug_level'] = 'none';
+$config['ci_debug_level'] = 'basic';
 
 // Provider: 'calendar_api' or 'calendar_http'
-$config['ci_provider'] = 'calendar_http';
+$config['ci_provider'] = 'calendar_api';
+
+// Avoid calendar/DAV requests while additional_imap is browsing a remote account.
+// In that state Roundcube's session credentials belong to the remote IMAP account,
+// which can make calendar/libkolab DAV authentication fail.
+$config['ci_skip_additional_imap_remote'] = true;
 
 // Force noon anchoring to prevent day drift on all-day & UTC-midnight inputs
 $config['ci_force_noon_anchor'] = true;
