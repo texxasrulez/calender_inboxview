@@ -51,18 +51,17 @@ class calender_inboxview extends rcube_plugin
         // Data endpoint
         $this->register_action('plugin.calender_inboxview.fetch', [$this, 'action_fetch']);
 
-        // Only inject assets on Mail task
+        // Only inject assets based on the active task
         if ($this->rc->task === 'mail') {
             $this->include_script('js/calender_inboxview.js');
 
-            $skin = (string)$this->rc->config->get('skin', 'classic');
-            if (file_exists($this->home . "/skins/$skin/calender_inboxview.css")) {
-                $this->include_stylesheet("skins/$skin/calender_inboxview.css");
-            } 
-        else if ($this->rc->task === 'calendar') {
-            $this->include_script('js/ci_calendar_bridge.js');
-        }
-		else {
+            // Automatically resolve skin inheritance via framework
+            $skin_path = $this->local_skin_path();
+			$skin      = (string)$this->rc->config->get('skin', 'classic');
+			
+            if ($skin_path && file_exists($this->home . '/' . $skin_path . '/calender_inboxview.css')) {
+                $this->include_stylesheet($skin_path . '/calender_inboxview.css');
+			} else {
                 $this->include_stylesheet("skins/classic/calender_inboxview.css");
             }
 
@@ -79,7 +78,12 @@ class calender_inboxview extends rcube_plugin
             $this->rc->output->set_env('ci_max_events', (int)$this->rc->config->get('ci_max_events', 8));
             $this->rc->output->set_env('ci_debug_level', (string)$this->rc->config->get('ci_debug_level', 'basic'));
             $this->rc->output->set_env('ci_force_noon_anchor', (bool)$this->rc->config->get('ci_force_noon_anchor', true));
-			$this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => $title, 'skin' => $skin]);
+			
+			if (method_exists($this, 'dbg')) {
+                $this->dbg('init', ['ci_display' => $show, 'ci_days_ahead' => $days, 'title' => $title, 'skin' => $skin, 'skin_path' => $skin_path]);
+            }
+        } elseif ($this->rc->task === 'calendar') {
+            $this->include_script('js/ci_calendar_bridge.js');
         }
     }
 
